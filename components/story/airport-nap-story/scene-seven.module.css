@@ -1,0 +1,232 @@
+.scene {
+  position: relative;
+  width: min(100%, calc((100vh - 88px) * 1.5384615385));
+  aspect-ratio: 1280 / 832;
+  margin: 0 auto;
+}
+
+.panel {
+  position: absolute;
+  width: 39.0625%;
+  aspect-ratio: 500 / 550;
+  border-radius: 8px;
+  overflow: hidden;
+  will-change: transform, opacity, clip-path;
+}
+
+.leftPanel {
+  left: 9.6875%;
+  top: 9.6153846154%;
+}
+
+.rightPanel {
+  left: 51.25%;
+  top: 22.6%;
+  width: 46%;
+  container-type: inline-size;
+  background: var(--color-yellow);
+  border: 6px solid var(--color-bg-inverse);
+}
+
+.image {
+  object-fit: contain;
+}
+
+.phoneStoryboard {
+  position: absolute;
+  inset: 0;
+  font-family: var(--font-chalk), var(--font-chalk-fallback);
+  color: var(--color-text-primary);
+}
+
+.phoneStage {
+  position: absolute;
+  inset: 0;
+  background: var(--color-yellow);
+  border-radius: 8px;
+}
+
+.phoneShell {
+  position: absolute;
+  left: 50%;
+  top: 2%;
+  width: 76%;
+  height: 100%;
+  transform: translateX(-50%);
+  border-radius: 1.6cqw;
+  background: var(--color-bg-inverse);
+}
+
+.phoneTopbar {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  width: 40%;
+  height: 3%;
+  transform: translateX(-50%);
+}
+
+.phoneDot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3.6cqw;
+  height: 3.6cqw;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: var(--color-bg-white);
+}
+
+.phoneSpeaker {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 62%;
+  height: 2.65cqw;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: var(--color-bg-white);
+}
+
+.phoneScreen {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+  width: 90%;
+  height: 90%;
+  border-radius: 0.8cqw;
+  background: var(--color-bg-white);
+}
+
+.sessionBadge {
+  position: absolute;
+  left: 50%;
+  top: 7.7%;
+  width: 31.5%;
+  transform: translateX(-50%);
+}
+
+.sessionBadgeArt {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 80 / 45;
+}
+
+.sessionBadgeLogo {
+  object-fit: contain;
+}
+
+.sessionTitle {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  width: 74%;
+  margin: 0;
+  transform: translateX(-50%);
+  font-size: 4cqw;
+  line-height: 1;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.summaryCard {
+  position: absolute;
+  left: 8%;
+  width: 84%;
+  min-height: 12.4cqw;
+  border-radius: 1.6cqw;
+  background: var(--color-yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8cqw;
+  padding: 1.2cqw 1.6cqw;
+}
+
+.summaryCardPaid {
+  top: 32%;
+}
+
+.summaryCardReturned {
+  top: 48%;
+}
+
+.summaryLabel {
+  font-size: 3.2cqw;
+  line-height: 1;
+}
+
+.summaryValue {
+  font-size: 5.2cqw;
+  line-height: 1;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.secondaryInfo {
+  position: absolute;
+  left: 8%;
+  top: 64%;
+  width: 84%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2cqw;
+  align-items: flex-start;
+}
+
+.secondaryItem {
+  width: calc(50% - 1cqw);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4cqw;
+}
+
+.secondaryLabel {
+  font-size: 2.8cqw;
+  line-height: 1;
+}
+
+.secondaryValue {
+  font-size: 3.9cqw;
+  line-height: 1;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.doneButton {
+  position: absolute;
+  left: 8%;
+  bottom: 12%;
+  width: 84%;
+  min-height: 12.4cqw;
+  border: 0.6cqw solid var(--color-bg-inverse);
+  border-radius: 999px;
+  background: var(--color-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.2cqw;
+  line-height: 1;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .scene {
+    width: 100%;
+    aspect-ratio: auto;
+    min-height: 100vh;
+    display: grid;
+    gap: 20px;
+    padding: 20px 16px 0;
+  }
+
+  .panel {
+    position: relative;
+    inset: auto;
+    width: min(100%, 500px);
+    margin: 0 auto;
+  }
+}

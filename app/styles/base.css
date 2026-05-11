@@ -1,0 +1,115 @@
+:root {
+  --color-yellow: #FDE64B;
+  --color-yellow-darker: #FDB64B;
+  --color-yellow-lighter: #FFF3A6;
+  --color-bg-white: #FFFFFF;
+  --color-bg-inverse: #000000;
+  --color-bg-inverse-elevated: #1A1A1A;
+  --color-bg-yellow: #FAF8E7;
+  --color-text-primary: #000000;
+  --color-text-secondary: rgba(0, 0, 0, 0.75);
+  --color-text-inverse: #FFFFFF;
+  --color-status-closed: #DDDDDD;
+  --color-status-opening: #FDE64B;
+  --color-status-active: #70FF6E;
+  --color-status-closing: #6DF5FF;
+
+  --overlay-black-08: rgba(0, 0, 0, 0.08);
+  --overlay-black-12: rgba(0, 0, 0, 0.12);
+  --overlay-black-14: rgba(0, 0, 0, 0.14);
+  --overlay-black-16: rgba(0, 0, 0, 0.16);
+  --overlay-black-18: rgba(0, 0, 0, 0.18);
+  --overlay-black-26: rgba(0, 0, 0, 0.26);
+  --overlay-black-96: rgba(0, 0, 0, 0.96);
+  --overlay-white-05: rgba(255, 255, 255, 0.05);
+  --overlay-white-08: rgba(255, 255, 255, 0.08);
+  --overlay-white-28: rgba(255, 255, 255, 0.28);
+  --overlay-white-42: rgba(255, 255, 255, 0.42);
+  --overlay-white-72: rgba(255, 255, 255, 0.72);
+  --overlay-white-74: rgba(255, 255, 255, 0.74);
+  --overlay-white-92: rgba(255, 255, 255, 0.92);
+  --overlay-white-94: rgba(255, 255, 255, 0.94);
+  --overlay-white-96: rgba(255, 255, 255, 0.96);
+  --overlay-white-98: rgba(255, 255, 255, 0.98);
+  --overlay-yellow-08: rgba(253, 230, 75, 0.08);
+  --overlay-yellow-30: rgba(253, 230, 75, 0.30);
+  --overlay-yellow-42: rgba(253, 230, 75, 0.42);
+  --overlay-yellow-48: rgba(253, 230, 75, 0.48);
+  --overlay-yellow-55: rgba(253, 230, 75, 0.55);
+  --overlay-yellow-88: rgba(253, 230, 75, 0.88);
+  --overlay-status-active-14: rgba(112, 255, 110, 0.14);
+
+  --gradient-page-background:
+    radial-gradient(circle at top, var(--overlay-yellow-30), transparent 28%),
+    linear-gradient(180deg, var(--color-yellow-lighter) 0%, var(--color-bg-yellow) 28%, var(--color-bg-yellow) 100%);
+  --gradient-hero-scrim:
+    linear-gradient(180deg, var(--overlay-white-05), var(--overlay-white-98) 78%),
+    var(--overlay-white-94);
+  --gradient-hero-panel: linear-gradient(180deg, var(--overlay-white-74), var(--overlay-white-42));
+  --gradient-beam-yellow: linear-gradient(180deg, var(--overlay-yellow-48), var(--overlay-yellow-08));
+  --gradient-beam-yellow-soft: linear-gradient(180deg, var(--overlay-yellow-42), transparent);
+  --gradient-connector-dark: repeating-linear-gradient(90deg, var(--overlay-black-96) 0 18px, transparent 18px 32px);
+  --gradient-connector-dark-glow: linear-gradient(90deg, transparent, var(--overlay-black-26), transparent);
+  --gradient-connector-light: repeating-linear-gradient(90deg, var(--overlay-white-96) 0 18px, transparent 18px 32px);
+  --gradient-connector-light-glow: linear-gradient(90deg, transparent, var(--overlay-yellow-88), transparent);
+  --gradient-distribution-remaining: linear-gradient(90deg, var(--color-bg-white) 0%, var(--color-yellow-lighter) 100%);
+  --gradient-distribution-paid: linear-gradient(90deg, var(--color-yellow-darker) 0%, var(--color-yellow) 100%);
+  --gradient-distribution-shimmer: linear-gradient(90deg, transparent, var(--overlay-white-28), transparent);
+  --gradient-settlement-card: linear-gradient(180deg, var(--overlay-yellow-48), var(--overlay-yellow-08));
+
+  --shadow-toggle: none;
+  --shadow-toggle-hover: none;
+  --shadow-toggle-active: none;
+  --shadow-button-rest: none;
+  --shadow-button-hover: none;
+  --shadow-button-active: none;
+  --shadow-status-active-ring: 0 0 0 4px var(--overlay-status-active-14);
+  --shadow-distribution-shell: inset 0 0 0 2px var(--overlay-black-08), 0 0 0 1px var(--overlay-white-08);
+
+  --font-chalk-fallback: "Chalkboard SE", "Chalkboard", "Comic Sans MS", "Marker Felt", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--gradient-page-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-chalk), var(--font-chalk-fallback);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+button,
+a[href],
+[role="button"],
+summary {
+  cursor: pointer;
+}
+
+button:disabled,
+[role="button"][aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+img {
+  max-width: 100%;
+}

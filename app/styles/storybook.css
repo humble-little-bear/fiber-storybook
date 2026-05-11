@@ -1,0 +1,93 @@
+.home-shell {
+  padding-bottom: 4rem;
+}
+
+.home-shell--landing {
+  padding-bottom: 0;
+}
+
+.story-scene {
+  position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.chapter-flow {
+  position: relative;
+  width: 100%;
+  overflow-x: clip;
+  background: var(--color-bg-white);
+}
+
+html:has(.chapter-flow) {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 0;
+}
+
+#scene-1 .story-stage {
+  background: var(--color-bg-white);
+}
+
+.story-scene--intro .story-stage {
+  background: var(--color-bg-white);
+}
+
+#scene-4 .story-stage {
+  background: var(--color-bg-white);
+}
+
+#scene-5 .story-stage {
+  background: var(--color-bg-yellow);
+}
+
+
+.story-stage {
+  position: relative;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+}
+
+.story-scene--sleep .story-stage {
+  padding: 0;
+  align-content: stretch;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.story-scene--sleep {
+  margin-top: 0;
+}
+
+.story-scene--five-six .story-stage {
+  align-content: stretch;
+  justify-items: stretch;
+  overflow: hidden;
+  background: var(--color-bg-yellow);
+}
+
+.story-scene--five-six {
+  z-index: 2;
+}
+
+.story-scene-pair {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-bg-white);
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .story-stage {
+    padding: 0;
+    align-content: center;
+    justify-items: center;
+  }
+}

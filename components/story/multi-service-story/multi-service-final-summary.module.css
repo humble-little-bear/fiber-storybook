@@ -1,0 +1,243 @@
+.scene {
+  position: relative;
+  width: min(100%, calc((100vh - 88px) * 1.5384615385));
+  aspect-ratio: 1280 / 832;
+  margin: 0 auto;
+}
+
+.panel {
+  position: absolute;
+  width: 39.0625%;
+  height: 66.1057692308%;
+  aspect-ratio: 500 / 550;
+  border-radius: 8px;
+  overflow: hidden;
+  will-change: transform, opacity, clip-path;
+}
+
+.leftPanel {
+  left: 9.6875%;
+  top: 9.6153846154%;
+}
+
+.rightPanel {
+  left: 51.25%;
+  top: 24.2788461538%;
+  container-type: inline-size;
+  border: 6px solid var(--color-bg-inverse);
+  background: var(--color-yellow);
+}
+
+.image {
+  display: block;
+  object-fit: contain;
+}
+
+.phoneStoryboard {
+  position: absolute;
+  inset: 0;
+  font-family: var(--font-chalk), var(--font-chalk-fallback);
+  color: var(--color-text-primary);
+}
+
+.phoneStage {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: var(--color-yellow);
+}
+
+.phoneShell {
+  position: absolute;
+  left: 50%;
+  top: 1.6%;
+  width: 65%;
+  height: 100%;
+  transform: translateX(-50%);
+  border-radius: 1.6cqw 1.6cqw 0 0;
+  background: var(--color-bg-inverse);
+}
+
+.phoneTopbar {
+  position: absolute;
+  left: 50%;
+  top: 5.5%;
+  width: 39%;
+  height: 3%;
+  transform: translateX(-50%);
+}
+
+.phoneDot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3.4cqw;
+  height: 3.4cqw;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: var(--color-bg-white);
+}
+
+.phoneSpeaker {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 62%;
+  height: 2.6cqw;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  background: var(--color-bg-white);
+}
+
+.phoneScreen {
+  position: absolute;
+  left: 5%;
+  top: 11.5%;
+  width: 90%;
+  height: 88.5%;
+  border-radius: 0.8cqw 0.8cqw 0 0;
+  background: var(--color-bg-white);
+}
+
+.passBadge {
+  position: absolute;
+  left: 50%;
+  top: 6.6%;
+  width: 14.2cqw;
+  height: 14.2cqw;
+  transform: translateX(-50%);
+}
+
+.passBadgeArt {
+  position: absolute;
+  inset: 0;
+}
+
+.passBadgeImage {
+  object-fit: contain;
+}
+
+.passTitle {
+  position: absolute;
+  left: 50%;
+  top: 23.6%;
+  width: 84%;
+  margin: 0;
+  transform: translateX(-50%);
+  font-size: 4.2cqw;
+  line-height: 1;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.summaryCard {
+  position: absolute;
+  left: 8%;
+  width: 84%;
+  min-height: 11.4cqw;
+  border-radius: 1.6cqw;
+  background: var(--color-yellow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4cqw;
+  padding: 1cqw 1.6cqw;
+}
+
+.summaryCardPaid {
+  top: 31%;
+}
+
+.summaryCardReturned {
+  top: 43.8%;
+}
+
+.summaryLabel {
+  font-size: 2.9cqw;
+  line-height: 1;
+}
+
+.summaryValue {
+  font-size: 5.2cqw;
+  line-height: 1;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.serviceSummary {
+  position: absolute;
+  left: 8%;
+  top: 56.4%;
+  width: 84%;
+}
+
+.serviceSummary h4 {
+  margin: 0 0 3.4cqw;
+  font-size: 3.8cqw;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.serviceRows {
+  display: grid;
+  gap: 2cqw;
+}
+
+.serviceRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr) minmax(0, 0.9fr);
+  gap: 1.4cqw;
+  align-items: start;
+  font-size: 2.6cqw;
+  line-height: 1.05;
+}
+
+.serviceRow span:nth-child(2),
+.serviceRow span:nth-child(3) {
+  white-space: nowrap;
+}
+
+.serviceRow span:nth-child(3) {
+  text-align: right;
+}
+
+.doneButton {
+  position: absolute;
+  left: 8%;
+  bottom: 3%;
+  width: 84%;
+  min-height: 10.8cqw;
+  border: 0.6cqw solid var(--color-bg-inverse);
+  border-radius: 999px;
+  background: var(--color-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 4.2cqw;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .scene {
+    width: 100%;
+    aspect-ratio: auto;
+    min-height: 100vh;
+    display: grid;
+    gap: 14px;
+    padding: 20px 16px 28px;
+  }
+
+  .panel {
+    position: relative;
+    inset: auto;
+    width: min(100%, 500px);
+    height: min(calc((100vw - 32px) * 1.1), 550px);
+    margin: 0 auto;
+  }
+}

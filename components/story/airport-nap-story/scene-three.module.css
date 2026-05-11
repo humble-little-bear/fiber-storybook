@@ -1,0 +1,159 @@
+.scene {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 20px;
+  width: min(calc(100vw - 48px), 1032px);
+  min-height: auto;
+  padding: 52px 24px 24px;
+  transform-origin: center center;
+}
+
+.lead,
+.footer p {
+  margin: 0;
+  font-family: var(--font-chalk), var(--font-chalk-fallback);
+  color: var(--color-text-primary);
+}
+
+.lead {
+  font-size: clamp(22px, 2vw, 24px);
+  line-height: 1.15;
+  text-align: center;
+}
+
+.board {
+  position: relative;
+  width: min(100%, 1032px);
+  aspect-ratio: 1032 / 550;
+  border-radius: 8px;
+  overflow: visible;
+  transform-origin: center center;
+}
+
+.boardImage {
+  object-fit: contain;
+}
+
+.hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  overflow: visible;
+}
+
+.heart {
+  position: absolute;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.heart img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.heartSmall {
+  width: clamp(28px, 3vw, 42px);
+}
+
+.heartMedium {
+  width: clamp(34px, 3.8vw, 52px);
+}
+
+.heartLarge {
+  width: clamp(42px, 4.8vw, 68px);
+}
+
+.heartLeftHigh {
+  left: 3%;
+  top: 62%;
+}
+
+.heartLeftMid {
+  left: 6.5%;
+  top: 76%;
+}
+
+.heartLeftLow {
+  left: 1.5%;
+  top: 90%;
+}
+
+.heartRightHigh {
+  left: 96%;
+  top: 68%;
+}
+
+.heartRightMid {
+  left: 103%;
+  top: 78%;
+}
+
+.heartRightLow {
+  left: 100%;
+  top: 92%;
+}
+
+.footer {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+  width: min(100%, 760px);
+}
+
+.footer p {
+  width: 100%;
+  font-size: clamp(22px, 2vw, 24px);
+  line-height: 1.16;
+  text-align: center;
+}
+
+@media (min-width: 901px) {
+  .footer p:last-child {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 900px) {
+  .scene {
+    position: absolute;
+    left: 50%;
+    width: min(calc(100vw - 32px), 1032px);
+  }
+}
+
+@media (max-width: 760px) {
+  .scene {
+    gap: 16px;
+    padding: 12px 16px 28px;
+  }
+
+  .lead,
+  .footer p {
+    font-size: clamp(18px, 4.8vw, 22px);
+  }
+
+  .footer {
+    gap: 12px;
+    width: min(100%, 330px);
+  }
+
+  .heartSmall {
+    width: clamp(20px, 5.6vw, 34px);
+  }
+
+  .heartMedium {
+    width: clamp(24px, 6.8vw, 40px);
+  }
+
+  .heartLarge {
+    width: clamp(30px, 8vw, 48px);
+  }
+}

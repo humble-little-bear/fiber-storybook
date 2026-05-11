@@ -1,0 +1,258 @@
+.buttonWrap {
+  left: 50%;
+  top: 64.8%;
+  position: absolute;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 19.0625%;
+  max-width: 244px;
+  min-width: 208px;
+  min-height: 56px;
+  padding: 16px 20px;
+  border: 2px solid var(--color-text-primary);
+  border-radius: 999px;
+  background: var(--color-yellow);
+  color: var(--color-text-primary);
+  font-family: var(--font-chalk), var(--font-chalk-fallback);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: var(--shadow-button-rest);
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
+  isolation: isolate;
+}
+
+.button > span {
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.button::before {
+  background: var(--color-bg-white);
+  width: 120%;
+  height: 0;
+  padding-bottom: 120%;
+  top: -110%;
+  left: -10%;
+  border-radius: 50%;
+  transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.button::after {
+  background: var(--color-bg-white);
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-button-hover);
+  background: var(--color-bg-white);
+  color: var(--color-text-primary);
+}
+
+.button:hover > span {
+  animation: calypsoTextOut 0.3s forwards, calypsoTextIn 0.3s forwards 0.3s;
+}
+
+.button:hover::before {
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.button:hover::after {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.05s 0.4s linear;
+}
+
+.button:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: var(--shadow-button-active);
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--overlay-white-92);
+  outline-offset: 4px;
+}
+
+.picoStage {
+  left: 50%;
+  top: 73.8%;
+  position: absolute;
+  width: 19.807109375%;
+  max-width: 253.531px;
+  min-width: 176px;
+  aspect-ratio: 253.531 / 317.435;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  transition: top 360ms cubic-bezier(0.22, 1, 0.36, 1), transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.picoLayer {
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+  transition: opacity 240ms ease, transform 340ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.picoLayerSleeping,
+.picoLayerHalf,
+.picoLayerAwake {
+  opacity: 0;
+}
+
+.picoStageSleeping .picoLayerSleeping {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: sleepBreathe 2.8s ease-in-out infinite;
+}
+
+.picoStageHalf .picoLayerSleeping {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+}
+
+.picoStageHalf .picoLayerHalf {
+  opacity: 1;
+  transform: translateY(-6px) scale(1.02);
+}
+
+.picoStageAwake .picoLayerHalf {
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+}
+
+.picoStageAwake .picoLayerAwake {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.zzz {
+  left: calc(50% + 108px);
+  top: 78.8%;
+  width: 96px;
+  height: 78px;
+  position: absolute;
+  pointer-events: none;
+}
+
+.zzzLetter {
+  position: absolute;
+  font-family: var(--font-chalk), var(--font-chalk-fallback);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text-inverse);
+  animation: zzzFloat 2.6s ease-in-out infinite;
+}
+
+.zzzLetter1 {
+  left: 0;
+  top: 28px;
+  animation-delay: 0s;
+}
+
+.zzzLetter2 {
+  left: 26px;
+  top: 10px;
+  animation-delay: 0.35s;
+}
+
+.zzzLetter3 {
+  left: 56px;
+  top: 0;
+  animation-delay: 0.7s;
+}
+
+@media (max-width: 900px) {
+  .buttonWrap {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none !important;
+    display: flex;
+    justify-content: center;
+    padding: 20px 16px 0;
+  }
+
+  .picoStage {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none !important;
+    width: min(56vw, 260px);
+    height: min(70vw, 326px);
+    margin: 16px auto 0;
+  }
+
+  .zzz {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none !important;
+    width: 88px;
+    height: 72px;
+    margin: -16px auto 0 calc(50% + 44px);
+  }
+}
+
+@keyframes zzzFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1.06);
+    opacity: 1;
+  }
+}
+
+@keyframes sleepBreathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-4px) scale(1.025);
+  }
+}
+
+@keyframes calypsoTextOut {
+  to {
+    transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+    opacity: 0;
+  }
+}
+
+@keyframes calypsoTextIn {
+  from {
+    transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}

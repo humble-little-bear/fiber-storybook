@@ -1,0 +1,53 @@
+.scene {
+  position: relative;
+  width: min(100%, calc((100vh - 88px) * 1.5384615385));
+  aspect-ratio: 1280 / 832;
+  margin: 0 auto;
+}
+
+.panel {
+  position: absolute;
+  width: 39.0625%;
+  aspect-ratio: 500 / 550;
+  border-radius: 8px;
+  overflow: hidden;
+  will-change: transform, opacity, clip-path;
+}
+
+.panelStack {
+  position: absolute;
+  inset: 0;
+}
+
+.leftPanel {
+  left: 9.6875%;
+  top: 9.6153846154%;
+}
+
+.rightPanel {
+  left: 51.25%;
+  top: 24.2788461538%;
+}
+
+.image {
+  display: block;
+  object-fit: contain;
+  transition: opacity 220ms ease;
+}
+
+@media (max-width: 900px) {
+  .scene {
+    width: 100%;
+    aspect-ratio: auto;
+    display: grid;
+    gap: 14px;
+    padding: 0 16px 28px;
+  }
+
+  .panel {
+    position: relative;
+    width: 100%;
+    left: auto;
+    top: auto;
+  }
+}

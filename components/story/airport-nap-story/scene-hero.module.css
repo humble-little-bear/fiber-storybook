@@ -1,0 +1,174 @@
+.heroScene {
+  width: 100vw;
+  height: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.storyStageHero {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  justify-items: stretch;
+  background: var(--color-bg-white);
+  overflow: hidden;
+}
+
+.hero {
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: 1;
+  overflow: hidden;
+  will-change: opacity;
+}
+
+.heroStandalone {
+  inset: 0;
+  left: 0;
+  width: 100%;
+  transform: none;
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.backgroundImage {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.backgroundWhiteout {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero-scrim);
+}
+
+.heroMascot {
+  position: absolute;
+  left: clamp(16px, 2.5vw, 40px);
+  bottom: 40px;
+  width: clamp(280px, 30vw, 460px);
+  z-index: 1;
+}
+
+.heroMascotImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.heroCopy {
+  position: absolute;
+  right: clamp(36px, 7vw, 118px);
+  top: 50%;
+  width: min(60vw, 36rem);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.heroCopyPanel {
+  display: grid;
+  gap: 22px;
+  padding: clamp(18px, 2vw, 26px);
+  backdrop-filter: blur(16px);
+  background: var(--gradient-hero-panel);
+  border-radius: 28px;
+}
+
+.heroTitle,
+.heroSubtitle,
+.scrollCue {
+  margin: 0;
+  font-family: var(--font-chalk), var(--font-chalk-fallback);
+}
+
+.heroTitle {
+  font-size: clamp(40px, 4.35vw, 56px);
+  line-height: 1.05;
+}
+
+.heroSubtitle {
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.1;
+  color: var(--color-text-secondary);
+}
+
+.heroSubtitle strong {
+  color: var(--color-text-primary);
+}
+
+.scrollCue {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  transform: translateX(-50%);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--color-text-primary);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.scrollArrow {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(45deg);
+  animation: scrollBounce 1.4s ease-in-out infinite;
+}
+
+@media (max-width: 760px) {
+  .heroMascot {
+    left: 12px;
+    bottom: 20px;
+    width: min(52vw, 300px);
+  }
+
+  .heroCopy {
+    right: 16px;
+    top: 46%;
+    width: min(54vw, 22rem);
+  }
+
+  .heroCopyPanel {
+    gap: 16px;
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .heroTitle {
+    font-size: clamp(30px, 7vw, 42px);
+  }
+
+  .heroSubtitle {
+    font-size: clamp(18px, 4vw, 24px);
+  }
+
+  .scrollCue {
+    bottom: 32px;
+    font-size: 16px;
+  }
+}
+
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: rotate(45deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(45deg) translateY(6px);
+  }
+}
