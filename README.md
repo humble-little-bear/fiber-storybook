@@ -91,7 +91,7 @@ fiber-storybook/
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) 18+ (LTS recommended)
+- [Node.js](https://nodejs.org/) 18+ or 20+ LTS
 - npm (comes with Node.js)
 
 ### Setup
@@ -135,4 +135,4 @@ Whether you're a developer, designer, or just curious about Fiber, we'd love to 
 
 ## License
 
-This project is open source. See the repository for license details.
+This project is open source and available under the MIT License.
